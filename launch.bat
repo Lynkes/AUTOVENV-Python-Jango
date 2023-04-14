@@ -53,6 +53,8 @@ if EXIST %ACCELERATE% goto :accelerate_launch
 :launch
 %PYTHON% launch.py %*
 %PYTHON% projeto\manage.py migrate %*
+%PYTHON% projeto\manage.py makemigrations %*
+%PYTHON% projeto\manage.py migrate %*
 %PYTHON% projeto\manage.py runserver %*
 pause
 exit /b
